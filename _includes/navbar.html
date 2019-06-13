@@ -13,7 +13,7 @@
       <ul class="navbar-nav ml-auto">
         {% if site.domain %}<a href="{{ site.domain }}">
            <button class="btn" type="button">{{ site.domain }}</button>
-        </a>
+        </a>{% endif %}
       {% for link in site.navbar-links %}
         {% if link[1].first %}
         <div class="dropdown">
