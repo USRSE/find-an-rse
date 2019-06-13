@@ -69,7 +69,8 @@ excluded_in_search: true
 				var item = window.data[result.ref],
 					contentPreview = getPreview(query, item.content, 170),
 					titlePreview = getPreview(query, item.title);
-
+                                console.log(item.url.trim())
+                                console.log(item)
 				resultsHTML += "<li><h4><a href='{{ site.domain }}" + item.url.trim() + "'>" + titlePreview + "</a></h4><p><small>" + contentPreview + "</small></p></li>";
 			});
 
