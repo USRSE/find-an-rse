@@ -1,0 +1,44 @@
+# --- General options --- #
+
+# Repository name (will be the search endpoint for your organization)
+baseurl: "/find-an-rse"
+
+# Community Name: (should start with US-RSE <name>
+title: Find a Research Software Engineer
+
+# GitHub Organization username (used to get repos)
+github_username:  usrse
+
+# Prefix: The repo prefix to include in your subset
+prefix: community-
+
+# The name of the repository to post issues to
+repo: https://www.github.com/usrse/find-an-rse
+
+# DO NOT EDIT BELOW THIS LINE ##################################################
+
+logo: "assets/img/logo-transparent.svg"
+
+# Paths
+defaults:
+    -
+        scope:
+            path: "pages"
+            type: pages
+        values:
+            layout: page
+
+# Navigation
+navbar-links:
+  Home: "https://www.us-rse.org"
+  About: "about"
+
+# Build settings
+permalink   : /:year/:categories/:title/
+exclude: ["_site", "vendor", ".circleci"]
+
+markdown:          kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
