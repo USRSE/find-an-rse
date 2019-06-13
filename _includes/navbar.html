@@ -11,7 +11,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-      {% for link in site.navbar-links %}
+       <li><a href="{{ site.domain }}/">Home</a></li>
+       {% for link in site.navbar-links %}
         {% if link[1].first %}
         <div class="dropdown">
           <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -31,7 +32,6 @@
         </a>
         {% endif %}
         {% endfor %}
-       <li><a href="{{ site.baseurl }}/search" class="no-after" id="search-toggle"> <i class="fa fa-search" style="margin-top: 15px;color:white;margin-left: 10px;"></i></a></li>
       </ul>
     </div>
   </div>

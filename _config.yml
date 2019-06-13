@@ -31,9 +31,8 @@ defaults:
         values:
             layout: page
 
-# Navigation
+# Navigation (you don't need to add a link for Home, it's added to site.domain)
 navbar-links:
-  Home: "https://www.us-rse.org"
   About: "about"
 
 # Build settings
