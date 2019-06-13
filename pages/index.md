@@ -19,16 +19,17 @@ permalink: /
 <script>
 (function() {
 window.data = {}
-
 $.getJSON("https://api.github.com/orgs/{{ site.github_username }}/repos", {
   format: "json"
 }).done(function(data) {
+  console.log("Found repos starting with {{ site.prefix }}:")
   $.each(data, function(key, value) {
     if (value.name.startsWith("{{ site.prefix }}")) {
       var name = value.name.replace("{{ site.prefix }}", "");  
       console.log(value.name);
-      $.getJSON("{{ site.domain }}/" + value.name) 
-       .done(function(pages, status) {
+      $.getJSON("{{ site.domain }}/" + value.name + '/data.json',  {
+         format: "json"
+       }).done(function(pages, status) {
        if (status === 200) {
          $.each(pages, function(key, value) {
              window.data[key] = value;           
