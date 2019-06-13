@@ -7,8 +7,8 @@ permalink: /
 
 
 <form action="{{ site.baseurl }}/find-an-rse" method="get">
-	<input type="search" name="q" id="search-input" placeholder="Search {{ site.title }}?" style="margin-top:5px" autofocus>
-	<input type="submit" value="Search" style="display: none;">
+    <input type="search" name="q" id="search-input" placeholder="Search {{ site.title }}?" style="margin-top:5px" autofocus>
+    <input type="submit" value="Search" style="display: none;">
 </form>
 
 <p><span id="search-process">Loading</span> results <span id="search-query-container" style="display: none;">for "<strong id="search-query"></strong>"</span></p>
@@ -25,11 +25,14 @@ $.getJSON("https://api.github.com/orgs/{{ site.github_username }}/repos", {
   console.log("Found repos starting with {{ site.prefix }}:")
   $.each(data, function(key, value) {
     if (value.name.startsWith("{{ site.prefix }}")) {
-      var name = value.name.replace("{{ site.prefix }}", "");  
       console.log(value.name);
-      $.getJSON("{{ site.domain }}/" + value.name + '/data.json',  {
+      var dataurl = "{{ site.domain }}/" + value.name + '/data.json'
+      console.log(dataurl)
+      $.getJSON(dataurl, {
          format: "json"
        }).done(function(pages, status) {
+       console.log(status);
+       console.log(pages);
        if (status === 200) {
          $.each(pages, function(key, value) {
              window.data[key] = value;           
