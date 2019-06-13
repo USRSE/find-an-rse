@@ -6,7 +6,7 @@ permalink: /
 ## Find a Research Software Engineer
 
 
-<form action="{{ site.baseurl }}/find-an-rse" method="get">
+<form action="{{ site.baseurl }}/" method="get">
     <input type="search" name="q" id="search-input" placeholder="Search {{ site.title }}?" style="margin-top:5px" autofocus>
     <input type="submit" value="Search" style="display: none;">
 </form>
