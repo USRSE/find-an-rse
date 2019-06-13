@@ -27,7 +27,7 @@ $.getJSON("https://api.github.com/orgs/{{ site.github_username }}/repos", {
     if (value.name.startsWith("{{ site.prefix }}")) {
       var name = value.name.replace("{{ site.prefix }}", "");  
       console.log(value.name);
-      $.getJSON("{{ site.domain }}/" + value.full_name) 
+      $.getJSON("{{ site.domain }}/" + value.name) 
        .done(function(pages, status) {
        if (status === 200) {
          $.each(pages, function(key, value) {
