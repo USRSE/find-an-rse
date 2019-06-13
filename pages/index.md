@@ -7,7 +7,7 @@ permalink: /
 
 
 <form action="{{ site.baseurl }}/" method="get">
-    <input type="search" name="q" id="search-input" placeholder="Search {{ site.title }}?" style="margin-top:5px" autofocus>
+    <input type="search" name="q" id="search-input" placeholder="Find an RSE?" style="margin-top:5px" autofocus>
     <input type="submit" value="Search" style="display: none;">
 </form>
 
