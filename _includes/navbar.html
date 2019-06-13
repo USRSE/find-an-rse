@@ -11,8 +11,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-       <li><a href="{{ site.domain }}/">Home</a></li>
-       {% for link in site.navbar-links %}
+        {% if site.domain %}<a href="{{ site.domain }}">
+           <button class="btn" type="button">{{ site.domain }}</button>
+        </a>
+      {% for link in site.navbar-links %}
         {% if link[1].first %}
         <div class="dropdown">
           <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
