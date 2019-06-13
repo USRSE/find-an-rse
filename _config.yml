@@ -12,6 +12,9 @@ github_username:  usrse
 # Prefix: The repo prefix to include in your subset
 prefix: community-
 
+# Domain of the GitHub pages (either org.github.io, or custom)
+domain: https://us-rse.org
+
 # The name of the repository to post issues to
 repo: https://www.github.com/usrse/find-an-rse
 
