@@ -19,6 +19,7 @@ permalink: /
 <script>
 (function() {
 window.data = {}
+
 $.getJSON("https://api.github.com/orgs/{{ site.github_username }}/repos", {
   format: "json"
 }).done(function(data) {
@@ -31,9 +32,7 @@ $.getJSON("https://api.github.com/orgs/{{ site.github_username }}/repos", {
       $.getJSON(dataurl, {
          format: "json"
        }).done(function(pages, status) {
-       console.log(status);
-       console.log(pages);
-       if (status === 200) {
+       if (status == "success") {
          $.each(pages, function(key, value) {
              window.data[key] = value;           
          });
